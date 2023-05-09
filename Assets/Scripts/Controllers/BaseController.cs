@@ -2,43 +2,46 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseController : IDisposable
+namespace Bario
 {
-    private bool _isDisposed = false;
-
-    private List<BaseController> _childControllers = new();
-    private List<GameObject> _childGameObjects = new();
-
-    protected void AddController(BaseController controller)
+    public class BaseController : IDisposable
     {
-        _childControllers.Add(controller);
-        UpdateController.Add(controller);
-    }
+        private bool _isDisposed = false;
 
-    protected void AddGameObject(GameObject go) => _childGameObjects.Add(go);
-    protected virtual void OnDisposed() { }
+        private List<BaseController> _childControllers = new();
+        private List<GameObject> _childGameObjects = new();
 
-    public void Dispose()
-    {
-        if (_isDisposed)
-            return; 
-        
-        _isDisposed = true;
-
-        OnDisposed();
-        foreach (var controller in _childControllers)
+        protected void AddController(BaseController controller)
         {
-            UpdateController.Remove(controller);
-            controller?.Dispose();
+            _childControllers.Add(controller);
+            UpdateController.Add(controller);
         }
-        _childControllers.Clear();
 
-        foreach (var gameObject in _childGameObjects)
+        protected void AddGameObject(GameObject go) => _childGameObjects.Add(go);
+        protected virtual void OnDisposed() { }
+
+        public void Dispose()
         {
-            if (gameObject != null)
-                GameObject.Destroy(gameObject);
+            if (_isDisposed)
+                return;
+
+            _isDisposed = true;
+
+            OnDisposed();
+            foreach (var controller in _childControllers)
+            {
+                UpdateController.Remove(controller);
+                controller?.Dispose();
+            }
+            _childControllers.Clear();
+
+            foreach (var gameObject in _childGameObjects)
+            {
+                if (gameObject != null)
+                    GameObject.Destroy(gameObject);
+            }
+            _childGameObjects.Clear();
+
         }
-        _childGameObjects.Clear();
-        
     }
 }

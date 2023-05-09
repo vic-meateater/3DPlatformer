@@ -1,17 +1,31 @@
 ﻿using UnityEngine;
 
-public class PlayerController: BaseController, IFixedUpdate
+namespace Bario
 {
-    private readonly PlayerView _player;
-    public PlayerController(GameConfig gameConfig) 
+    public class PlayerController : BaseController, IFixedUpdate
     {
-        var playerGO = GameObject.Instantiate(gameConfig.PlayerPrefab, Vector3.zero, Quaternion.identity);
-        _player = playerGO.GetComponent<PlayerView>();
-        AddGameObject(playerGO);
-    }
+        private readonly PlayerView _player;
+        private readonly GameConfig _gameConfig;
 
-    public void FixedUpdate()
-    {
-        //
+        public PlayerController(GameConfig gameConfig)
+        {
+            _gameConfig = gameConfig;
+            _player = GetPlayerView(_gameConfig);
+        }
+
+        private PlayerView GetPlayerView(GameConfig gameConfig)
+        {
+            var playerGO = GameObject.Instantiate(gameConfig.PlayerPrefab, Vector3.zero, Quaternion.identity);
+            playerGO.TryGetComponent<PlayerView>(out var playerView);
+            AddGameObject(playerGO);
+            return playerView;
+        }
+
+        public GameObject GetGameObject() => _player.gameObject;
+
+        public void FixedUpdate()
+        {
+            //
+        }
     }
 }

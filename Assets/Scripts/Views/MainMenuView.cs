@@ -2,17 +2,20 @@
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class MainMenuView: MonoBehaviour
+namespace Bario
 {
-    [SerializeField] private Button _startButton;
-
-    public void Init(UnityAction startGame)
+    public class MainMenuView : MonoBehaviour
     {
-        _startButton.onClick.AddListener(startGame);
-    }
+        [SerializeField] private Button _startButton;
 
-    private void OnDestroy()
-    {
-        _startButton.onClick.RemoveAllListeners();
+        public void Init(UnityAction startGame)
+        {
+            _startButton.onClick.AddListener(startGame);
+        }
+
+        private void OnDestroy()
+        {
+            _startButton.onClick.RemoveAllListeners();
+        }
     }
 }

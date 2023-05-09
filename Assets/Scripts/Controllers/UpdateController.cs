@@ -1,23 +1,26 @@
 ﻿using System.Collections.Generic;
 
-public static class UpdateController
+namespace Bario
 {
-    private static List<IFixedUpdate> _fixedUpdatesControllers = new();
-    public static List<IFixedUpdate> GetFixedUpdates => _fixedUpdatesControllers;
-
-    public static void Add(BaseController controller)
+    public static class UpdateController
     {
-        if(controller is IFixedUpdate fixedUpdate) 
+        private static List<IFixedUpdate> _fixedUpdatesControllers = new();
+        public static List<IFixedUpdate> GetFixedUpdates => _fixedUpdatesControllers;
+
+        public static void Add(BaseController controller)
         {
-            _fixedUpdatesControllers.Add(fixedUpdate);
+            if (controller is IFixedUpdate fixedUpdate)
+            {
+                _fixedUpdatesControllers.Add(fixedUpdate);
+            }
         }
-    }
 
-    public static void Remove(BaseController controller)
-    {
-        if (controller is IFixedUpdate fixedUpdate)
+        public static void Remove(BaseController controller)
         {
-            _fixedUpdatesControllers.Remove(fixedUpdate);
+            if (controller is IFixedUpdate fixedUpdate)
+            {
+                _fixedUpdatesControllers.Remove(fixedUpdate);
+            }
         }
     }
 }

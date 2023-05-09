@@ -1,21 +1,22 @@
 ﻿using UnityEditor.SceneManagement;
 using UnityEngine;
 
-public class GameController: BaseController
+namespace Bario
 {
-    private readonly PlayerModel _playerModel;
-    private readonly GameConfig _gameConfig;
-
-    public GameController(PlayerModel playerModel, GameConfig gameConfig)
+    public class GameController : BaseController
     {
-        _playerModel = playerModel;
-        _gameConfig = gameConfig;
-        var playerController = new PlayerController(gameConfig);
-        AddController(playerController);
+        private readonly PlayerModel _playerModel;
+
+        public GameController(PlayerModel playerModel, GameConfig gameConfig)
+        {
+            _playerModel = playerModel;
+            var playerController = new PlayerController(gameConfig);
+            AddController(playerController);
+        }
     }
-}
 
-public class InputController
-{
+    public class InputController
+    {
 
+    }
 }

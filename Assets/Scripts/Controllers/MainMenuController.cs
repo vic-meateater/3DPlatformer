@@ -1,31 +1,33 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class MainMenuController: BaseController
+namespace Bario
 {
-    private readonly PlayerModel _playerModel;
-    private readonly Transform _uiRoot;
-    private readonly GameConfig _gameConfig;
-
-    public MainMenuController(PlayerModel playerModel, Transform uiRoot, GameConfig gameConfig)
+    public class MainMenuController : BaseController
     {
-        _playerModel = playerModel;
-        _uiRoot = uiRoot;
-        _gameConfig = gameConfig;
-        CreateView();
-    }
+        private readonly PlayerModel _playerModel;
+        private readonly Transform _uiRoot;
+        private readonly GameConfig _gameConfig;
 
-    private void CreateView()
-    {
-        var mainMenuGO = GameObject.Instantiate(_gameConfig.MainMenuPrefab, _uiRoot);
-        AddGameObject(mainMenuGO);
+        public MainMenuController(PlayerModel playerModel, Transform uiRoot, GameConfig gameConfig)
+        {
+            _playerModel = playerModel;
+            _uiRoot = uiRoot;
+            _gameConfig = gameConfig;
+            CreateView();
+        }
 
-        var mainMenuView = mainMenuGO.GetComponent<MainMenuView>();
-        mainMenuView.Init(StartGame);
-    }
+        private void CreateView()
+        {
+            var mainMenuGO = GameObject.Instantiate(_gameConfig.MainMenuPrefab, _uiRoot);
+            AddGameObject(mainMenuGO);
 
-    private void StartGame()
-    {
-        _playerModel.State.Value = GameState.Game;
+            var mainMenuView = mainMenuGO.GetComponent<MainMenuView>();
+            mainMenuView.Init(StartGame);
+        }
+
+        private void StartGame()
+        {
+            _playerModel.State.Value = GameState.Game;
+        }
     }
 }
