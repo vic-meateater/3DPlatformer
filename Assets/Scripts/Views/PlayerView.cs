@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Tools;
+using UnityEngine;
 
 namespace Bario
 {
@@ -30,5 +31,16 @@ namespace Bario
             _playersRigidBody.velocity =
                 new Vector3(_playersRigidBody.velocity.x, _playersRigidBody.velocity.y, _playersMovementDirection * PlayersMovementSpeed);
         }
+    }
+}
+public class InputView: MonoBehaviour
+{
+    protected float _speed;
+    private SubscriptionProperty<float> _moving;
+
+    public void Init(SubscriptionProperty<float> moving, float speed)
+    {
+        _speed = speed;
+        _moving = moving;
     }
 }
