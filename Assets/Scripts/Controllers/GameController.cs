@@ -1,4 +1,5 @@
-﻿using UnityEditor.SceneManagement;
+﻿using Tools;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 namespace Bario
@@ -9,14 +10,13 @@ namespace Bario
 
         public GameController(PlayerModel playerModel, GameConfig gameConfig)
         {
+            var move = new SubscriptionProperty<float>();
             _playerModel = playerModel;
-            var playerController = new PlayerController(gameConfig);
+            var playerController = new PlayerController(move, gameConfig);
             AddController(playerController);
+
+            var inputController = new InputController(move, _playerModel.Player);
+            AddController(inputController);
         }
-    }
-
-    public class InputController
-    {
-
     }
 }
