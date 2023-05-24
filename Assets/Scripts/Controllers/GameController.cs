@@ -1,6 +1,4 @@
 ﻿using Tools;
-using UnityEditor.SceneManagement;
-using UnityEngine;
 
 namespace Bario
 {

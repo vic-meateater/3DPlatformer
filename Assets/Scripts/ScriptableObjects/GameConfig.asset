@@ -15,4 +15,4 @@ MonoBehaviour:
   mainMenu: {fileID: 6015533690559672758, guid: 4968d9c8d12cf7a4e9e6b0e1dae9fd38,
     type: 3}
   player: {fileID: 7620766590266227000, guid: 357c80d62b2fa484ab3ca4bb78597a4e, type: 3}
-  playerSpeed: 1
+  playerSpeed: 3

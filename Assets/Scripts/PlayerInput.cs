@@ -52,7 +52,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""negative"",
                     ""id"": ""735d3cd4-a30d-4b56-abcc-6751a9f8d7b6"",
-                    ""path"": ""<Keyboard>/s"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -63,7 +63,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""positive"",
                     ""id"": ""acfcff92-7f71-47a4-8630-76d75fc260cb"",
-                    ""path"": ""<Keyboard>/w"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

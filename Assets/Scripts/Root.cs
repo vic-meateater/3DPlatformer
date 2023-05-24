@@ -23,7 +23,6 @@ namespace Bario
 
         private void FixedUpdate()
         {
-            Debug.Log(UpdateController.GetFixedUpdates.Count);
             foreach (var update in UpdateController.GetFixedUpdates)
             {
                 update.FixedUpdate();
