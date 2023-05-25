@@ -10,9 +10,12 @@ namespace Bario
         [SerializeField] private GameObject player = null;
         [Header("Player settings")]
         [SerializeField] private float playerSpeed = 1f;
+        [Header("Yandex")]
+        [SerializeField] private YandexBanner banner = null;
 
         public GameObject MainMenuPrefab => mainMenu;
         public GameObject PlayerPrefab => player;
         public float PlayerSpeed => playerSpeed;
+        public YandexBanner Banner => banner;
     }
 }

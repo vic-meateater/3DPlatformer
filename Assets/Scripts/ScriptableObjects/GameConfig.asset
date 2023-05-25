@@ -16,3 +16,4 @@ MonoBehaviour:
     type: 3}
   player: {fileID: 7620766590266227000, guid: 357c80d62b2fa484ab3ca4bb78597a4e, type: 3}
   playerSpeed: 3
+  banner: {fileID: 3783502407966876185, guid: 2f8839eb87fb1164b8d4087f6506165d, type: 3}
