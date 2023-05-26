@@ -18,6 +18,7 @@ namespace Bario
             //AdSize bannerMaxSize = AdSize.StickySize(GetScreenWidthDp());
 
             banner = new Banner(adUnitId, bannerMaxSize, AdPosition.BottomCenter);
+
         }
 
         // Example how to get screen width for request
