@@ -1,7 +1,7 @@
 ﻿using Tools;
 using UnityEngine;
 
-namespace Bario
+namespace Bario.Controllers
 {
     public class PlayerController : BaseController
     {

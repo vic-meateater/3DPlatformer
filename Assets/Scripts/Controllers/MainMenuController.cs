@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Bario.Models;
+using UnityEngine;
 
-namespace Bario
+namespace Bario.Controllers
 {
     public class MainMenuController : BaseController
     {

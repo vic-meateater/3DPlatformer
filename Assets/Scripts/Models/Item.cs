@@ -1,4 +1,5 @@
-﻿namespace Bario
+﻿using Bario.Interfaces;
+namespace Bario
 {
     public class Item : IItem
     {

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Bario.Controllers;
+using Bario.Models;
+using UnityEngine;
 
 namespace Bario
 {

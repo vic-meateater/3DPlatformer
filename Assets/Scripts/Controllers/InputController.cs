@@ -1,6 +1,6 @@
 ﻿using Tools;
 
-namespace Bario
+namespace Bario.Controllers
 {
     public class InputController : BaseController
     {

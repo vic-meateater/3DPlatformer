@@ -1,6 +1,7 @@
-﻿using Tools;
+﻿using Bario.Models;
+using Tools;
 
-namespace Bario
+namespace Bario.Controllers
 {
     public class GameController : BaseController
     {
@@ -15,6 +16,10 @@ namespace Bario
 
             var inputController = new InputController(move, _playerModel.Player);
             AddController(inputController);
+
+            var player = playerController.GetGameObject();
+            var cameraController = new CameraController(player, gameConfig);
+            AddController(cameraController);
         }
     }
 }

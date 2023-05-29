@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Bario;
+using Bario.Interfaces;
+using System;
+using System.Collections.Generic;
 
-namespace Bario
+namespace Bario.Controllers
 {
     public static class UpdateController
     {

@@ -11,16 +11,18 @@ namespace Bario.Controllers
 
         public ItemRepositoryController(List<ItemConfig> itemConfigs) 
         {
-            PopulateItems(itemConfigs);
+            PopulateItems(ref _itemsMapById, itemConfigs);
         }
 
-        private void PopulateItems(List<ItemConfig> itemConfigs)
+        private void PopulateItems(
+            ref Dictionary<int, IItem> upgradeHandlersMapByType, 
+            List<ItemConfig> itemConfigs)
         {
             foreach (var itemConfig in itemConfigs)
             {
                 if (_itemsMapById.ContainsKey(itemConfig.Id))
                     continue;
-                _itemsMapById.Add(itemConfig.Id, CreateItem(itemConfig));
+                upgradeHandlersMapByType.Add(itemConfig.Id, CreateItem(itemConfig));
             }
         }
 
@@ -34,6 +36,12 @@ namespace Bario.Controllers
                     Title = itemConfig.Title,
                 }
             };
+        }
+
+        protected override void OnDisposed()
+        {
+            _itemsMapById.Clear();
+            _itemsMapById = null;
         }
     }
 }

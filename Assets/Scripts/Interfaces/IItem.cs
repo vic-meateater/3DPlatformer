@@ -1,7 +1,7 @@
 using Bario;
 using System.Collections.Generic;
 
-namespace Bario
+namespace Bario.Interfaces
 {
     public interface IItem
     {

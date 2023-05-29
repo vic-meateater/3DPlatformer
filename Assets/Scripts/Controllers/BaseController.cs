@@ -1,10 +1,11 @@
 using Bario;
+using Bario.Controllers;
 using Bario.Interfaces;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Bario
+namespace Bario.Controllers
 {
     public class BaseController : IDisposable
     {

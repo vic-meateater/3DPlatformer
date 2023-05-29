@@ -8,6 +8,7 @@ namespace Bario
         [Header("Prefabs and other setups")]
         [SerializeField] private GameObject mainMenu = null;
         [SerializeField] private GameObject player = null;
+        [SerializeField] private GameObject virtualCamera = null;
         [Header("Player settings")]
         [SerializeField] private float playerSpeed = 1f;
         [Header("Yandex")]
@@ -15,6 +16,7 @@ namespace Bario
 
         public GameObject MainMenuPrefab => mainMenu;
         public GameObject PlayerPrefab => player;
+        public GameObject VirtualCameraPrefab => virtualCamera; 
         public float PlayerSpeed => playerSpeed;
         public YandexBanner Banner => banner;
     }

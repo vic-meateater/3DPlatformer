@@ -1,7 +1,8 @@
-﻿using Bario;
+﻿using Bario.Interfaces;
+using System.Collections.Generic;
 using Tools;
 
-namespace Bario
+namespace Bario.Models
 {
     public class PlayerModel
     {
