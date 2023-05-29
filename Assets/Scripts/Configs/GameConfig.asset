@@ -15,5 +15,7 @@ MonoBehaviour:
   mainMenu: {fileID: 6015533690559672758, guid: 4968d9c8d12cf7a4e9e6b0e1dae9fd38,
     type: 3}
   player: {fileID: 7620766590266227000, guid: 357c80d62b2fa484ab3ca4bb78597a4e, type: 3}
+  virtualCamera: {fileID: 8269776418476241544, guid: a689e2842c22c814f891c77fe57e6f46,
+    type: 3}
   playerSpeed: 3
   banner: {fileID: 3783502407966876185, guid: 2f8839eb87fb1164b8d4087f6506165d, type: 3}
