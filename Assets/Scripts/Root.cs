@@ -6,6 +6,7 @@ namespace Bario
     {
         [SerializeField] private Transform _uiRoot;
         [SerializeField] private GameConfig _gameConfig;
+        [SerializeField] private UpgradeItemConfigDataSource _upgradeItemDataSource;
 
         private MainController _mainController;
 

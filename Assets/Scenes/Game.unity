@@ -453,6 +453,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _uiRoot: {fileID: 1114271407}
   _gameConfig: {fileID: 11400000, guid: 5d7902e07abd6a043857d3c3e5072299, type: 2}
+  _upgradeItemDataSource: {fileID: 11400000, guid: 85184e541b9125b4f8eae0c90b294862,
+    type: 2}
 --- !u!1 &1114271406
 GameObject:
   m_ObjectHideFlags: 0

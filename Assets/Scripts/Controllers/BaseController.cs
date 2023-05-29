@@ -1,3 +1,5 @@
+using Bario;
+using Bario.Interfaces;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,7 +43,6 @@ namespace Bario
                     GameObject.Destroy(gameObject);
             }
             _childGameObjects.Clear();
-
         }
     }
 }
